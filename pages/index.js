@@ -5,6 +5,10 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `
 
+const Title2 = ({ title, titla }) => {
+  return <h1>{title}, {titla}</h1>
+}
+
 export default function Home() {
-  return <Title>My page</Title>
+  return <Title2 title="Vamos lá" titla="de novo" />
 }
