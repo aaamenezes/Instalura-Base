@@ -1,4 +1,3 @@
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 import React from 'react'
 import Logo from '../../../theme/Logo'
 import { Button } from '../Button'
@@ -26,9 +25,9 @@ export default function Menu() {
         <Logo />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
-        {links.map(link => {
+        {links.map((link,index) => {
           return (
-            <li>
+            <li key={index}>
               <a href={link.url}>
                 {link.text}
               </a>
@@ -37,10 +36,10 @@ export default function Menu() {
         })}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button>
+        <Button variant="primary.medium" ghost>
           Entrar
         </Button>
-        <Button>
+        <Button variant="secondary.medium">
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>

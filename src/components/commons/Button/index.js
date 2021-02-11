@@ -1,13 +1,27 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import get from 'lodash/get'
 
+const ButtonGhost = css`
+  color: ${ ({theme,variant}) => get(theme, `colors.${variant}.color`) };
+  background-color: transparent;
+`
+
+const ButtonDefault = css`
+  color: ${ ({theme,variant}) => get(theme, `colors.${variant}.contrastText`) };
+  background-color: ${ ({theme,variant}) => get(theme, `colors.${variant}.color`) };
+`
+ 
 export const Button = styled.button`
   padding: 12px 26px;
   border: 0;
+  outline: 0;
+  border-radius: ${ ({theme}) => theme.colors.border.radius.large };
   font-weight: bold;
   opacity: 1;
   cursor: pointer;
-
+  ${ ({ghost}) => ghost ? ButtonGhost : ButtonDefault}
+  
   &:hover, &:focus {
     opacity: .5;
   }
-`;
+`
