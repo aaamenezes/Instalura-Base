@@ -1,3 +1,5 @@
+import { typographyVariants } from './typographyVariants'
+
 const colors = {
   primary: {
     medium: {
@@ -53,6 +55,7 @@ const fontFamily = {
 export default {
   colors,
   fontFamily,
+  typographyVariants,
   borderRadius,
   transitions
 }

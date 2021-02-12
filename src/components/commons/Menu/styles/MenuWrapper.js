@@ -34,7 +34,6 @@ MenuWrapper.CentralSide = styled.div`
     text-decoration: none;
     color: #88989E;
     transition: ${ ({theme}) => theme.transitions.fast };
-    font-weight: 500;
 
     &:hover, &:focus {
       color: #070C0E;
