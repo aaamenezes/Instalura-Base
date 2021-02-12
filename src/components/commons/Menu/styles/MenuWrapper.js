@@ -8,7 +8,6 @@ export const MenuWrapper = styled.nav`
   margin-top: 18px;
   padding-right: 28px;
   padding-left: 28px;
-  font-family: 'Rubik', sans-serif;
 `
 
 MenuWrapper.LeftSide = styled.div`
@@ -34,11 +33,11 @@ MenuWrapper.CentralSide = styled.div`
     text-align: center;
     text-decoration: none;
     color: #88989E;
-    transition: 200mx ease-in-out;
+    transition: ${ ({theme}) => theme.transitions.fast };
+    font-weight: 500;
 
     &:hover, &:focus {
-      font-weight: 500;
-      color: #070C0E
+      color: #070C0E;
     }
   }
 `

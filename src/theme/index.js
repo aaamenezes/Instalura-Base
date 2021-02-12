@@ -27,33 +27,32 @@ const colors = {
       contrastText: '#fff'
     }
   },
-  background: {
-    light: {
-      color: '#FFFFFF',
-    },
-    main: {
-      color: '#F2F2F2',
-    },
-  },
-  border: {
-    main: {
-      color: '#F1F1F1',
-    },
-    radius: {
-      small: '3px',
-      large: '8px'
-    }
-  },
   modes: {
+    normal: {},
     dark: {},
-  },
-  transition: {
-    slow: '1s ease-in-out',
-    medium: '.7s ease-in-out',
-    fast: '.3s ease-in-out'
+    alternative: {}
   }
 }
 
+const borderRadius = {
+  small: '3px',
+  large: '8px'
+}
+
+const transitions = {
+  fast: '.3s ease-in-out',
+  medium: '.7s ease-in-out',
+  slow: '1s ease-in-out'
+}
+
+const fontFamily = {
+  primary: '\'Rubik\', sans-serif',
+  // secondary: ...
+}
+
 export default {
-  colors
+  colors,
+  fontFamily,
+  borderRadius,
+  transitions
 }

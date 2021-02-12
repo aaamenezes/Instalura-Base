@@ -15,10 +15,11 @@ export const Button = styled.button`
   padding: 12px 26px;
   border: 0;
   outline: 0;
-  border-radius: ${ ({theme}) => theme.colors.border.radius.large };
+  border-radius: ${ ({theme}) => theme.borderRadius.large };
   font-weight: bold;
   opacity: 1;
   cursor: pointer;
+  transition: ${ ({theme}) => theme.transitions.fast };
   ${ ({ghost}) => ghost ? ButtonGhost : ButtonDefault}
   
   &:hover, &:focus {
