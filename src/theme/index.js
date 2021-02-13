@@ -60,11 +60,18 @@ const breakpoints = {
   xl: 1200,
 }
 
+const opacity = {
+  invisible: .1,
+  transparent: .4,
+  light: .7
+}
+
 export default {
   colors,
   fontFamily,
   typographyVariants,
   borderRadius,
   transitions,
-  breakpoints
+  breakpoints,
+  opacity
 }

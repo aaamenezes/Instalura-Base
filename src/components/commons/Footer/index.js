@@ -20,7 +20,7 @@ const FooterWrapper = styled.footer`
 
     &:hover,
     &:focus {
-      opacity: .5;
+      opacity: ${ ({theme}) => theme.opacity.transparent };
     }
   }
 `
