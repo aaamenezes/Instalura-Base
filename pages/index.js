@@ -7,7 +7,6 @@ import { Button } from '../src/components/commons/Button'
 import { Grid } from '../src/components/foundation/layout/Grid'
 import { Box } from '../src/components/foundation/layout/Box'
 
-
 export default function Home() {
   return (
     <Box
@@ -80,9 +79,10 @@ export default function Home() {
           >
             <img
               style={{ display: 'block', margin: 'auto' }}
-              src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png" />
+              src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
+              alt="Imagem de celular com páginas internas do projeto exibindo o perfil do Nicolas Cage"
+            />
           </Grid.Col>
-          
         </Grid.Row>
       </Grid.Container>
 

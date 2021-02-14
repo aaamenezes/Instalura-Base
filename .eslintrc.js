@@ -15,8 +15,12 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react',
+    'react'
   ],
   rules: {
+    // Permitir JSX tanto em arquivos .js quanto em .jsx
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    // Não inserir ponto e vírgula no fim da sentença
+    omitLastInOneLineBlock: 'never'
   },
-};
+}

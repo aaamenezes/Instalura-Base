@@ -35,7 +35,7 @@ function Text({ tag, variant, children, ...props }) {
 }
 
 Text.propTypes = {
-  tag: PropTypes.string.isRequired,
+  tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node.isRequired
 }
