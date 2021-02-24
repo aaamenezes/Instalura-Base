@@ -42,7 +42,7 @@ Text.propTypes = {
 
 Text.defaultProps = {
   tag: 'span',
-  variant: 'paragraph1',
+  variant: 'paragraph1'
 }
 
 export default Text
