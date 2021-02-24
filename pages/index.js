@@ -1,4 +1,5 @@
-import React from 'react'
+// eslint-disable-next-line ident
+import React, { useState } from 'react'
 
 import Menu from '../src/components/commons/Menu'
 import Footer from '../src/components/commons/Footer'
@@ -6,19 +7,30 @@ import Text from '../src/components/foundation/Text'
 import { Button } from '../src/components/commons/Button'
 import { Grid } from '../src/components/foundation/layout/Grid'
 import { Box } from '../src/components/foundation/layout/Box'
+import Modal from '../src/components/commons/Modal'
 
 export default function Home() {
+  const [ isModalOpen, setModalState ] = useState(false)
+
   return (
     <Box
-      flex="1"
-      display="flex"
-      flexDirection="column"
-      justifyContent="spaceBetween"
-      flexWrap="wrap"
-      backgroundImage="url(/images/bubbles.svg)"
-      backgroundRepeat="no-repeat"
-      backgroundPosition="bottom right"
+      flex='1'
+      display='flex'
+      flexDirection='column'
+      justifyContent='spaceBetween'
+      flexWrap='wrap'
+      backgroundImage='url(/images/bubbles.svg)'
+      backgroundRepeat='no-repeat'
+      backgroundPosition='bottom right'
     >
+      <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
+        { propsDoModal => (
+          <Box backgroundColor='white' { ...propsDoModal }>
+            <div>NOeeo Modalosavndmi</div>
+          </Box>
+        )}
+      </Modal>
+
       <Menu />
 
       <Grid.Container
@@ -39,9 +51,9 @@ export default function Home() {
             alignItems='flex-start'
           >
             <Text
-              variant="title"
-              tag="h1"
-              color="secondary.main"
+              variant='title'
+              tag='h1'
+              color='secondary.main'
               textAlign={{
                 xs: 'center',
                 md: 'left'
@@ -50,9 +62,9 @@ export default function Home() {
               Compartilhe momentos e conecte-se com amigos
             </Text>
             <Text
-              variant="paragraph1"
-              tag="p"
-              color="secondary.light"
+              variant='paragraph1'
+              tag='p'
+              color='secondary.light'
               textAlign={{
                 xs: 'center',
                 md: 'left'
@@ -63,12 +75,13 @@ export default function Home() {
             </Text>
 
             <Button
-              variant="secondary.medium"
-              display="block"
+              variant='secondary.medium'
+              display='block'
               margin={{
                 xs: 'auto',
-                md: 'initial',
+                md: 'initial'
               }}
+              onClick={() => setModalState(!isModalOpen)}
             >
               Cadastrar
             </Button>
@@ -79,13 +92,12 @@ export default function Home() {
           >
             <img
               style={{ display: 'block', margin: 'auto' }}
-              src="https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png"
-              alt="Imagem de celular com páginas internas do projeto exibindo o perfil do Nicolas Cage"
+              src='https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png'
+              alt='Imagem de celular com páginas internas do projeto exibindo o perfil do Nicolas Cage'
             />
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
-
       <Footer />
     </Box>
   )
