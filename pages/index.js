@@ -8,6 +8,7 @@ import { Button } from '../src/components/commons/Button'
 import { Grid } from '../src/components/foundation/layout/Grid'
 import { Box } from '../src/components/foundation/layout/Box'
 import Modal from '../src/components/commons/Modal'
+import FormCadastro from '../src/components/patterns/FormCadastro'
 
 export default function Home() {
   const [ isModalOpen, setModalState ] = useState(false)
@@ -25,9 +26,10 @@ export default function Home() {
     >
       <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
         { propsDoModal => (
-          <Box backgroundColor='white' { ...propsDoModal }>
-            <div>NOeeo Modalosavndmi</div>
-          </Box>
+          <FormCadastro propsDoModal={propsDoModal} />
+          // <Box backgroundColor='white' { ...propsDoModal }>
+          //   <div>NOeeo Modalosavndmi</div>
+          // </Box>
         )}
       </Modal>
 
