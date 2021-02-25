@@ -29,10 +29,10 @@ const colors = {
       contrastText: '#fff'
     }
   },
-  modes: {
-    normal: {},
-    dark: {},
-    alternative: {}
+  support: {
+    white: '#FAFAFA',
+    gray: '#CCC',
+    black: '#333'
   }
 }
 
