@@ -30,5 +30,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Rodar o Linter!
         run: yarn lint
+      - name: Instalação de dependências
+        run: yarn
       - name: Mostrar a versão do node
         run: node -v
