@@ -3,7 +3,7 @@ import { normalize } from 'styled-normalize'
 
 const GlobalStyle = createGlobalStyle`
 
-  ${normalize}
+  ${ normalize }
 
   * {
     box-sizing: border-box;
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: ${({ theme }) => theme.fontFamily.primary };
+    font-family: ${ ({ theme }) => theme.fontFamily.primary };
     width: 100%;
   }
 

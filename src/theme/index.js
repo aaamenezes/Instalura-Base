@@ -48,7 +48,7 @@ const transitions = {
 }
 
 const fontFamily = {
-  primary: '\'Rubik\', sans-serif',
+  primary: '\'Rubik\', sans-serif'
   // secondary: ...
 }
 
@@ -57,13 +57,13 @@ const breakpoints = {
   sm: 480,
   md: 768,
   lg: 992,
-  xl: 1200,
+  xl: 1200
 }
 
 const opacity = {
-  invisible: .1,
-  transparent: .4,
-  light: .7
+  invisible: '.1',
+  transparent: '.4',
+  light: '.7'
 }
 
 // Sistema Bootstrap

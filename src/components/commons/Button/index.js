@@ -5,13 +5,17 @@ import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 import { propToStyle } from '../../../theme/utils/propToStyle'
 
 const ButtonGhost = css`
-  color: ${ ({theme,variant}) => get(theme, `colors.${variant}.color`) };
+  color: ${ ({ theme, variant }) => get(theme, `colors.${ variant }.color`) };
   background-color: transparent;
 `
 
 const ButtonDefault = css`
-  color: ${ ({theme,variant}) => get(theme, `colors.${variant}.contrastText`) };
-  background-color: ${ ({theme,variant}) => get(theme, `colors.${variant}.color`) };
+  color: ${
+  ({ theme, variant }) => get(theme, `colors.${ variant }.contrastText`)
+};
+  background-color: ${
+  ({ theme, variant }) => get(theme, `colors.${ variant }.color`)
+};
 `
 
 export const Button = styled.button`
@@ -30,7 +34,7 @@ export const Button = styled.button`
     }
   )}
   
-  ${ ({ghost}) => ghost ? ButtonGhost : ButtonDefault}
+  ${ ({ghost}) => ghost ? ButtonGhost : ButtonDefault }
 
   &:disabled {
     cursor: not-allowed;

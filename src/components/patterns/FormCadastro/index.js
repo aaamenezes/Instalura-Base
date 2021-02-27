@@ -12,7 +12,6 @@ function FormContent() {
   })
 
   function handleChange(event) {
-    console.log(userInfo)
     const fieldName = event.target.getAttribute('name')
     setUserInfo({
       ...userInfo,
@@ -20,25 +19,27 @@ function FormContent() {
     })
   }
 
-  const isFormInvalid = userInfo.usuario.length === 0 || userInfo.email.length === 0
+  const isFormInvalid = (
+    userInfo.usuario.length === 0 || userInfo.email.length === 0
+  )
 
   return (
     <form onSubmit={event => {
       event.preventDefault()
-      console.log(userInfo)
-    } }>
+    }}
+    >
       <Text
-        variant="title"
-        tag="h1"
-        color="tertiary.main"
+        variant='title'
+        tag='h1'
+        color='tertiary.main'
       >
         Pronto para saber da vida dos outros?
       </Text>
       <Text
-        variant="paragraph1"
-        tag="p"
-        color="tertiary.light"
-        marginBottom="32px"
+        variant='paragraph1'
+        tag='p'
+        color='tertiary.light'
+        marginBottom='32px'
       >
         Você está a um passo de saber tudoo que está
         rolando no bairro, complete seu cadastro agora!
@@ -77,32 +78,32 @@ function FormCadastro({ propsDoModal }) {
       marginLeft={0}
       marginRight={0}
       flex={1}
-      justifyContent="flex-end"
+      justifyContent='flex-end'
     >
       <Grid.Col
-        display="flex"
+        display='flex'
         paddingRight={{ md: '0' }}
         flex={1}
         value={{ xs: 12, md: 5, lg: 4 }}
       >
         <Box
-          boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
-          display="flex"
-          flexDirection="column"
-          justifyContent="center"
+          boxShadow='-10px 0px 24px rgba(7, 12, 14, 0.1)'
+          display='flex'
+          flexDirection='column'
+          justifyContent='center'
           flex={1}
           padding={{
             xs: '16px',
-            md: '85px',
+            md: '85px'
           }}
-          backgroundColor="white"
+          backgroundColor='white'
           {...propsDoModal}
         >
           <FormContent />
         </Box>
       </Grid.Col>
     </Grid.Row>
-  );
+  )
 }
 
 export default FormCadastro

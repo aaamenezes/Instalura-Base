@@ -42,11 +42,13 @@ module.exports = {
     'arrow-parens': [ 'error', 'as-needed' ],
     // Máximo de 80 caracteres por linha
     'max-len': [ 'error', { code: 80 } ],
+    // Não ter espaço entre o nome da função e os parênteses
+    'no-spaced-func': 'error'
     // Permitir spread operator
-    'react/jsx-props-no-spreading': [ {
-      'html': 'ignore',
-      'custom': 'ignore',
-      'explicitSpread': 'ignore'
-    }]
+    // 'react/jsx-props-no-spreading': [ {
+    //   'html': 'ignore',
+    //   'custom': 'ignore',
+    //   'explicitSpread': 'ignore'
+    // }]
   }
 }

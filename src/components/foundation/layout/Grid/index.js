@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
 
-  ${breakpointsMedia({
+  ${ breakpointsMedia({
     sm: css`
       max-width: 576px; 
     `,
@@ -23,10 +23,10 @@ const Container = styled.div`
     `,
     xl: css`
       max-width: 1222px;
-    `,
-  })}
+    `
+  }) }
 
-  ${propToStyle('marginTop')}
+  ${ propToStyle('marginTop') }
 `
 
 const Row = styled.div`
@@ -34,10 +34,10 @@ const Row = styled.div`
   flex-wrap: wrap;
   margin-right: -16px;
   margin-left: -16px;
-  ${propToStyle('flex')}
-  ${propToStyle('marginLeft')}
-  ${propToStyle('marginRight')}
-  ${propToStyle('justifyContent')}
+  ${ propToStyle('flex') }
+  ${ propToStyle('marginLeft') }
+  ${ propToStyle('marginRight') }
+  ${ propToStyle('justifyContent') }
 `
 
 const Col = styled.div`
@@ -47,7 +47,7 @@ const Col = styled.div`
   padding-right: 16px;
   padding-left: 16px;
 
-  ${ function({value}) {
+  ${ function({ value }) {
     if (typeof value === 'number') {
       return css`
         flex-grow: 0;
@@ -88,12 +88,12 @@ const Col = styled.div`
           flex-shrink: 0;
           flex-basis: ${ (100 * value.xl) / 12 }%;
           max-width: ${ (100 * value.xl) / 12 }%;
-        ` : '',
+        ` : ''
       })
     }
-  }}
+  } }
 
-  ${ function({offset}) {
+  ${ function({ offset }) {
     if (typeof offset === 'number') {
       return css`
         margin-left: ${ (100 * offset) / 12 }%;
@@ -106,15 +106,15 @@ const Col = styled.div`
         sm: offset?.sm ? css`margin-left: ${ (100 * offset.sm) / 12 }%;` : '',
         md: offset?.md ? css`margin-left: ${ (100 * offset.md) / 12 }%;` : '',
         lg: offset?.lg ? css`margin-left: ${ (100 * offset.lg) / 12 }%;` : '',
-        xl: offset?.xl ? css`margin-left: ${ (100 * offset.xl) / 12 }%;` : '',
+        xl: offset?.xl ? css`margin-left: ${ (100 * offset.xl) / 12 }%;` : ''
       })
     }
-  }}
+  } }
 
-  ${propToStyle('display')}
-  ${propToStyle('flexDirection')}
-  ${propToStyle('justifyContent')}
-  ${propToStyle('alignItems')}
+  ${ propToStyle('display') }
+  ${ propToStyle('flexDirection') }
+  ${ propToStyle('justifyContent') }
+  ${ propToStyle('alignItems') }
 `
 
 export const Grid = {
