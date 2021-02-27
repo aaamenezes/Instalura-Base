@@ -7,15 +7,15 @@ import { MenuWrapper } from './styles/MenuWrapper'
 const links = [
   {
     text: 'Home',
-    url: '/',
+    url: '/'
   },
   {
     text: 'Perguntas frequentes',
-    url: '/faq',
+    url: '/faq'
   },
   {
     text: 'Sobre',
-    url: '/sobre',
+    url: '/sobre'
   }
 ]
 
@@ -26,25 +26,22 @@ export default function Menu() {
         <Logo />
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
-        {links.map((link,index) => {
-          return (
-            <li key={index}>
-              <Text tag="a" href={link.url} variant="smallestException">
-                {link.text}
-              </Text>
-            </li>
-          )
-        })}
+        {links.map(link => (
+          <li key={link}>
+            <Text tag='a' href={link.url} variant='smallestException'>
+              {link.text}
+            </Text>
+          </li>
+        ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button variant="primary.medium" ghost>
+        <Button variant='primary.medium' ghost>
           Entrar
         </Button>
-        <Button variant="secondary.medium">
+        <Button variant='secondary.medium'>
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   )
 }
-

@@ -14,13 +14,13 @@ const FooterWrapper = styled.footer`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.primary.medium.color};
+    color: ${ ({ theme }) => theme.colors.primary.medium.color };
     text-decoration: none;
     transition: .3s;
 
     &:hover,
     &:focus {
-      opacity: ${ ({theme}) => theme.opacity.transparent };
+      opacity: ${ ({ theme }) => theme.opacity.transparent };
     }
   }
 `
@@ -29,18 +29,21 @@ export default function Footer(props) {
   return (
     // eslint-disable-next-line react/jsx-props-no-spreading
     <FooterWrapper {...props}>
-      <a href="https://www.alura.com.br/" target="_blank">
-        <img src="https://www.alura.com.br/assets/img/alura-logo.svg" alt="Logo Alura" />
+      <a href='https://www.alura.com.br/' target='_blank' rel='noreferrer'>
+        <img
+          src='https://www.alura.com.br/assets/img/alura-logo.svg'
+          alt='Logo Alura'
+        />
       </a>
       <p>
         Orgulhosamente criado durante
         {' '}
         o
         {' '}
-        <a href="https://www.alura.com.br/" target="_blank">
+        <a href='https://www.alura.com.br/' target='_blank' rel='noreferrer'>
           <span>Bootcamp Alura JAM Stack</span>
         </a>
       </p>
     </FooterWrapper>
-  );
-} 
+  )
+}

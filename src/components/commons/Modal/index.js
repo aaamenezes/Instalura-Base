@@ -69,7 +69,7 @@ function Modal({ isOpen, onClose, children }) {
           'data-modal-safe-area': 'true'
         })}
       </motion.div>
-      
+
     </ModalWrapper>
   )
 }

@@ -1,4 +1,3 @@
-// eslint-disable-next-line ident
 import React, { useState } from 'react'
 
 import Menu from '../src/components/commons/Menu'
@@ -25,12 +24,7 @@ export default function Home() {
       backgroundPosition='bottom right'
     >
       <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
-        { propsDoModal => (
-          <FormCadastro propsDoModal={propsDoModal} />
-          // <Box backgroundColor='white' { ...propsDoModal }>
-          //   <div>NOeeo Modalosavndmi</div>
-          // </Box>
-        )}
+        { propsDoModal => <FormCadastro propsDoModal={propsDoModal} /> }
       </Modal>
 
       <Menu />
@@ -72,8 +66,8 @@ export default function Home() {
                 md: 'left'
               }}
             >
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
+              Lorem Ipsum is simply dummy text of the printing and typesetting.
+              Lorem Ipsum has been the industrys standard dummy text ever since.
             </Text>
 
             <Button
@@ -94,7 +88,9 @@ export default function Home() {
           >
             <img
               style={{ display: 'block', margin: 'auto' }}
+              // eslint-disable-next-line max-len
               src='https://bootcamp-alura-01-git-modulo01.omariosouto.vercel.app/images/phones.png'
+              // eslint-disable-next-line max-len
               alt='Imagem de celular com páginas internas do projeto exibindo o perfil do Nicolas Cage'
             />
           </Grid.Col>

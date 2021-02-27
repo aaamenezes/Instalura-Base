@@ -22,19 +22,19 @@ export const Button = styled.button`
   padding: 12px 26px;
   border: 0;
   outline: 0;
-  border-radius: ${ ({theme}) => theme.borderRadius.large };
+  border-radius: ${ ({ theme }) => theme.borderRadius.large };
   font-weight: bold;
   cursor: pointer;
-  transition: ${ ({theme}) => theme.transitions.fast };
+  transition: ${ ({ theme }) => theme.transitions.fast };
 
   ${ breakpointsMedia(
     {
       xs: css`${ TextStyleVariantsMap.smallestException }`,
       md: css`${ TextStyleVariantsMap.paragraph1 }`
     }
-  )}
+  ) }
   
-  ${ ({ghost}) => ghost ? ButtonGhost : ButtonDefault }
+  ${ ({ ghost }) => (ghost ? ButtonGhost : ButtonDefault) }
 
   &:disabled {
     cursor: not-allowed;
@@ -49,6 +49,6 @@ export const Button = styled.button`
   ${ propToStyle('display') }
 
   &:hover, &:focus {
-    opacity: ${ ({theme}) => theme.opacity.transparent };
+    opacity: ${ ({ theme }) => theme.opacity.transparent };
   }
 `
