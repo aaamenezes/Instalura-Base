@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Grid } from '../../foundation/layout/Grid'
 import { Box } from '../../foundation/layout/Box'
 import { Button } from '../../commons/Button'
@@ -104,6 +105,10 @@ function FormCadastro({ propsDoModal }) {
       </Grid.Col>
     </Grid.Row>
   )
+}
+
+FormCadastro.propTypes = {
+  propsDoModal: PropTypes.func.isRequired
 }
 
 export default FormCadastro

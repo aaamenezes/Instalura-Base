@@ -1,7 +1,7 @@
 import { breakpointsMedia } from './breakpointsMedia'
 
 export function propToStyle(propName) {
-  return function(props) {
+  function styleReturned(props) {
     const propValue = props[propName]
 
     if (typeof propValue === 'string' || typeof propValue === 'number') {
@@ -19,5 +19,9 @@ export function propToStyle(propName) {
         xl: { [propName]: propValue.xl }
       })
     }
+
+    return undefined
   }
+
+  return styleReturned
 }

@@ -47,7 +47,7 @@ const Col = styled.div`
   padding-right: 16px;
   padding-left: 16px;
 
-  ${ function({ value }) {
+  ${ ({ value }) => {
     if (typeof value === 'number') {
       return css`
         flex-grow: 0;
@@ -91,9 +91,11 @@ const Col = styled.div`
         ` : ''
       })
     }
+
+    return undefined
   } }
 
-  ${ function({ offset }) {
+  ${ ({ offset }) => {
     if (typeof offset === 'number') {
       return css`
         margin-left: ${ (100 * offset) / 12 }%;
@@ -109,6 +111,8 @@ const Col = styled.div`
         xl: offset?.xl ? css`margin-left: ${ (100 * offset.xl) / 12 }%;` : ''
       })
     }
+
+    return undefined
   } }
 
   ${ propToStyle('display') }

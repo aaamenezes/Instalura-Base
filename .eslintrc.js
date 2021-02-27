@@ -27,7 +27,7 @@ module.exports = {
     // Não inserir vírgula após último elemento de arrays e objetos
     'comma-dangle': [ 'error', 'never' ],
     // Identação com dois espaços
-    ident: [ 'error', 2 ],
+    indent: [ 'error', 2 ],
     // Permitir tabs para identação
     'no-tabs': [ 'error', { allowIndentationTabs: true } ],
     // Preferir apóstrofo a aspas
@@ -43,12 +43,8 @@ module.exports = {
     // Máximo de 80 caracteres por linha
     'max-len': [ 'error', { code: 80 } ],
     // Não ter espaço entre o nome da função e os parênteses
-    'no-spaced-func': 'error'
+    'no-spaced-func': 'error',
     // Permitir spread operator
-    // 'react/jsx-props-no-spreading': [ {
-    //   'html': 'ignore',
-    //   'custom': 'ignore',
-    //   'explicitSpread': 'ignore'
-    // }]
+    'react/jsx-props-no-spreading': 'off'
   }
 }
