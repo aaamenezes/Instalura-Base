@@ -74,6 +74,7 @@ MenuWrapper.CentralSide = styled.div`
       padding-bottom: 0;
     `
   }) }
+
   a {
     text-align: center;
     display: block;
@@ -92,7 +93,6 @@ MenuWrapper.CentralSide = styled.div`
     &:focus {
       font-weight: 500;
       color: #070C0E;
-      
     }
   }
 `
