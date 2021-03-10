@@ -25,5 +25,6 @@ export default function App({ Component, pageProps }) {
 
 App.propTypes = {
   Component: PropTypes.func.isRequired,
-  pageProps: PropTypes.func.isRequired
+  pageProps: PropTypes.objectOf(PropTypes.func).isRequired
+  // pageProps: PropTypes.func.isRequired
 }

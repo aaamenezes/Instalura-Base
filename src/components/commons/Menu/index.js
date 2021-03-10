@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Logo from '../../../theme/Logo'
 import Text from '../../foundation/Text'
 import { Button } from '../Button'
@@ -19,7 +21,7 @@ const links = [
   }
 ]
 
-export default function Menu() {
+export default function Menu({ onCadastrarClick }) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
@@ -27,7 +29,7 @@ export default function Menu() {
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
         {links.map(link => (
-          <li key={link}>
+          <li key={link.url}>
             <Text tag='a' href={link.url} variant='smallestException'>
               {link.text}
             </Text>
@@ -35,13 +37,17 @@ export default function Menu() {
         ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button variant='primary.medium' ghost>
+        <Button variant='primary.medium' ghost href='/app/login'>
           Entrar
         </Button>
-        <Button variant='secondary.medium'>
+        <Button variant='secondary.medium' onClick={onCadastrarClick}>
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   )
+}
+
+Menu.propTypes = {
+  onCadastrarClick: PropTypes.func.isRequired
 }
