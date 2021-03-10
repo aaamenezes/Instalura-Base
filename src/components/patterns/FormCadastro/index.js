@@ -108,7 +108,7 @@ function FormCadastro({ propsDoModal }) {
 }
 
 FormCadastro.propTypes = {
-  propsDoModal: PropTypes.func.isRequired
+  propsDoModal: PropTypes.objectOf(PropTypes.string).isRequired
 }
 
 export default FormCadastro

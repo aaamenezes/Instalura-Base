@@ -38,6 +38,8 @@ module.exports = {
     'array-bracket-spacing': [ 'error', 'always' ],
     // Exigir espaço dentro de objeto: { 1, 2, 3 }
     'template-curly-spacing': [ 'error', 'always' ],
+    // Não exigir quebra de linha ou linha única para objetos (livre)
+    'object-curly-newline': [ 'error', { consistent: true } ],
     // Arrow functions com um parâmetro não devem usar parênteses
     'arrow-parens': [ 'error', 'as-needed' ],
     // Máximo de 80 caracteres por linha
@@ -45,6 +47,8 @@ module.exports = {
     // Não ter espaço entre o nome da função e os parênteses
     'no-spaced-func': 'error',
     // Permitir spread operator
-    'react/jsx-props-no-spreading': 'off'
+    'react/jsx-props-no-spreading': 'off',
+    // Label não se contenta com 'htmlFor' e exige 'for' que é palavra reservada
+    'jsx-a11y/label-has-associated-control': [ 'error', { assert: 'either' } ]
   }
 }
