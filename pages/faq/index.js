@@ -3,15 +3,6 @@ import PropTypes from 'prop-types'
 import FAQScreen from '../../src/components/screens/FAQScreen'
 
 export default function FAQPage({ faqCategories }) {
-  // const [ faqCategories, setFaqCategories ] = useState([])
-
-  // useEffect(() => {
-  //   fetch('https://instalura-api.vercel.app/api/content/faq')
-  //     .then(serverResponse => serverResponse.json())
-  //     .then(convertResponse => convertResponse.data)
-  //     .then(doneResponse => setFaqCategories(doneResponse))
-  // }, [])
-
   return <FAQScreen faqCategories={faqCategories} />
 }
 
