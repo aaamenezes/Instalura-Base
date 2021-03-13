@@ -1,34 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import Menu from '../src/components/commons/Menu'
-import Footer from '../src/components/commons/Footer'
 import Text from '../src/components/foundation/Text'
 import { Button } from '../src/components/commons/Button'
 import { Grid } from '../src/components/foundation/layout/Grid'
+import { WebsitePageContext } from '../src/components/wrappers/WebsitePage'
 import { Box } from '../src/components/foundation/layout/Box'
-import Modal from '../src/components/commons/Modal'
-import FormCadastro from '../src/components/patterns/FormCadastro'
+import websitePageHOC from '../src/components/wrappers/WebsitePage/hoc'
 
-export default function Home() {
-  const [ isModalOpen, setModalState ] = useState(false)
+function HomeScreen() {
+  const websitePageContext = React.useContext(WebsitePageContext)
 
   return (
     <Box
-      flex='1'
       display='flex'
       flexDirection='column'
-      justifyContent='spaceBetween'
-      flexWrap='wrap'
-      backgroundImage='url(/images/bubbles.svg)'
-      backgroundRepeat='no-repeat'
-      backgroundPosition='bottom right'
+      flex='1'
     >
-      <Modal isOpen={isModalOpen} onClose={() => setModalState(false)}>
-        { propsDoModal => <FormCadastro propsDoModal={propsDoModal} /> }
-      </Modal>
-
-      <Menu onCadastrarClick={() => setModalState(true)} />
-
       <Grid.Container
         marginTop={{
           xs: '32px',
@@ -77,7 +64,7 @@ export default function Home() {
                 xs: 'auto',
                 md: 'initial'
               }}
-              onClick={() => setModalState(!isModalOpen)}
+              onClick={() => websitePageContext.toggleModalCadatro()}
             >
               Cadastrar
             </Button>
@@ -96,7 +83,19 @@ export default function Home() {
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
-      <Footer />
     </Box>
   )
 }
+
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Home - Instalura'
+    },
+    pageBoxProps: {
+      backgroundImage: 'url(images/bubbles.svg)',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'bottom right'
+    }
+  }
+})
