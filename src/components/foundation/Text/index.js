@@ -48,9 +48,10 @@ export const TextStyleVariantsMap = {
 const TextBase = styled.span`
   ${ ({ variant }) => TextStyleVariantsMap[variant] }
   color: ${ ({ theme, color }) => get(theme, `colors.${ color }.color}`) };
-  ${ propToStyle('textAlign') }
   ${ propToStyle('marginBottom') }
   ${ propToStyle('margin') }
+  ${ propToStyle('color') }
+  ${ propToStyle('textAlign') }
 `
 
 function Text({ tag, variant, children, href, ...props }) {
