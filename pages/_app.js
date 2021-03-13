@@ -1,13 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import { ThemeProvider } from 'styled-components'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
-import GlobalStyle from '../src/theme/GlobalStyle'
-import theme from '../src/theme'
-
-import SEO from '../src/components/SEO'
-
+// eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
   return (
     <>
@@ -16,16 +11,12 @@ export default function App({ Component, pageProps }) {
         {/* eslint-disable-next-line max-len */}
         <link href='https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' />
       </Head>
-      <SEO headTitle='Home' />
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Component {...pageProps} />
     </>
   )
 }
 
-App.propTypes = {
-  Component: PropTypes.func.isRequired,
-  pageProps: PropTypes.objectOf(PropTypes.func).isRequired
-}
+// App.propTypes = {
+//   Component: PropTypes.func.isRequired,
+//   pageProps: PropTypes.objectOf(PropTypes.func).isRequired
+// }
