@@ -24,7 +24,8 @@ export default function TextField({
   placeholder,
   name,
   onChange,
-  value
+  value,
+  ...props
 }) {
   return (
     <InputWrapper>
@@ -34,6 +35,7 @@ export default function TextField({
         name={name}
         onChange={onChange}
         value={value}
+        {...props}
       />
     </InputWrapper>
   )
