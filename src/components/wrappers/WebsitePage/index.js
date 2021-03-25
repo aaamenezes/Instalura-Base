@@ -9,7 +9,7 @@ import FormCadastro from '../../patterns/FormCadastro'
 import SEO from '../../SEO'
 
 export const WebsitePageContext = React.createContext({
-  toggleModalCadatro: () => {}
+  toggleModalCadastro: () => {}
 })
 
 export default function WebsitePageWrapper({
@@ -22,7 +22,7 @@ export default function WebsitePageWrapper({
 
   return (
     <WebsitePageContext.Provider value={{
-      toggleModalCadatro: () => {
+      toggleModalCadastro: () => {
         setModalState(!isModalOpen)
       }
     }}
