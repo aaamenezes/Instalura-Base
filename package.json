@@ -9,11 +9,16 @@
     "lint": "eslint --ignore-path .gitignore .",
     "commit": "cz",
     "test:integration:open": "cypress open",
-    "test:integration": "cypress run --headless"
+    "test:integration": "cypress run --headless",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@types/jest": "^26.0.22",
     "commitizen": "^4.2.3",
+    "eslint-plugin-jest": "^24.3.2",
     "framer-motion": "^3.7.0",
+    "jest": "^26.6.3",
     "lodash": "^4.17.20",
     "next": "latest",
     "nookies": "^2.5.2",
