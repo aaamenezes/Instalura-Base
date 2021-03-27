@@ -5,7 +5,7 @@ import TextField from '../../forms/TextField'
 import useForm from '../../../infra/hooks/forms/useForm'
 import { loginService } from '../../../services/login/loginService'
 
-function LoginForm() {
+export default function LoginForm() {
   const initialValues = {
     usuario: '',
     senha: ''
@@ -18,16 +18,13 @@ function LoginForm() {
     onSubmit: values => {
       loginService.login({
         username: values.usuario,
-        passoword: values.senha
+        password: values.senha
       })
         .then(() => {
           router.push('/app/profile')
         })
     }
   })
-
-  console.log('entrou em formlogin')
-  console.log('initialValues', initialValues)
 
   return (
     <form id='formCadastro' onSubmit={form.handleSubmit}>
@@ -59,5 +56,3 @@ function LoginForm() {
     </form>
   )
 }
-
-export default LoginForm

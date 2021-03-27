@@ -1,4 +1,4 @@
-import { setCookies, destroyCookie } from 'nookies'
+import { setCookie, destroyCookie } from 'nookies'
 import { isStagingEnv } from '../../infra/env/isStagingEnv'
 
 async function HttpClient(url, { headers, body, ...options }) {
@@ -20,23 +20,21 @@ async function HttpClient(url, { headers, body, ...options }) {
 
 const BASE_URL = isStagingEnv
   // URL de DEV
-  ? 'https://instalura-api.omariosouto.vercel.app'
+  ? 'https://instalura-api-git-master-omariosouto.vercel.app'
   // URL DE PROD
-  : 'https://instalura-api.omariosouto.vercel.app'
+  : 'https://instalura-api-git-master-omariosouto.vercel.app'
 
 export const loginService = {
   async login({ username, password }) {
-    return HttpClient(
-      `${ BASE_URL }/api/login`, {
-        method: 'POST',
-        body: { username, password }
-      }
-    )
+    return HttpClient(`${ BASE_URL }/api/login`, {
+      method: 'POST',
+      body: { username, password }
+    })
       .then(convertedResponse => {
         // Escrever os testes
         // Salvar os tokens
         const { token } = convertedResponse.data
-        setCookies(null, 'APP_TOKEN', token, {
+        setCookie(null, 'APP_TOKEN', token, {
           path: '/',
           maxAge: 86400 // Segundos
         })
