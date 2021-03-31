@@ -2,7 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'cypress/globals': true
+    'cypress/globals': true,
+    'jest/globals': true
   },
   extends: [
     'plugin:cypress/recommended',
@@ -52,5 +53,19 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     // Label não se contenta com 'htmlFor' e exige 'for' que é palavra reservada
     'jsx-a11y/label-has-associated-control': [ 'error', { assert: 'either' } ]
-  }
+  },
+  overrides: [
+    {
+      files: [
+        '**/*.test.js'
+      ],
+      plugins: [ 'jest' ],
+      env: {
+        jest: true
+      },
+      // eslint-disable-next-line max-len
+      // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+      ...require('eslint-plugin-jest').configs.recommended
+    }
+  ]
 }
