@@ -33,6 +33,16 @@ const colors = {
     white: '#FAFAFA',
     gray: '#CCC',
     black: '#333'
+  },
+  feedback: {
+    success: {
+      color: '#28A745',
+      contrastText: 'FFFFFF'
+    },
+    error: {
+      color: '#DC3545',
+      contrastText: '#FFFFFF'
+    }
   }
 }
 

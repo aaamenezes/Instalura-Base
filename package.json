@@ -26,10 +26,14 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-is": "^16.8.0",
-    "styled-components": "^5.0.0",
-    "styled-normalize": "^8.0.7"
+    "styled-components": "^5.2.1",
+    "styled-normalize": "^8.0.7",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/react-hooks": "^5.1.1",
     "babel-plugin-styled-components": "^1.8.0",
     "cypress": "^6.8.0",
     "eslint": "^7.20.0",
@@ -39,7 +43,9 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^5.1.1"
+    "husky": "^5.1.1",
+    "jest-canvas-mock": "^2.3.1",
+    "jest-styled-components": "^7.0.3"
   },
   "husky": {
     "hooks": {
