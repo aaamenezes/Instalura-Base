@@ -23,3 +23,32 @@ exports[`<TextField /> renders component 1`] = `
   value="Mario"
 />
 `;
+
+exports[`<TextField /> when field is invalid display the respective error mesage 1`] = `
+.c0 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.c1 {
+  width: 100%;
+  border: 1px solid #CCC;
+  padding: 12px 16px;
+  outline: 0;
+  border-radius: 8px;
+  border-color: #DC3545;
+}
+
+.c1 + span {
+  color: #DC3545 font-size:11px;
+}
+
+<input
+  class="c0 c1"
+  name="email"
+  placeholder="Email"
+  type="text"
+  value="@gmail.com"
+/>
+`;

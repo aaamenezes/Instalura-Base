@@ -28,13 +28,14 @@ export default function LoginForm() {
   const form = useForm({
     initialValues,
     onSubmit: values => {
+      form.setIsFormDisabled(true)
       loginService.login({
         username: values.usuario, // omariosouto
         password: values.senha // senhasegura
       })
-        .then(() => {
-          router.push('/app/profile')
-        })
+        .then(() => router.push('/app/profile'))
+        .catch(error => console.error('error', error))
+        .finally(() => form.setIsFormDisabled(true))
     },
     async validateSchema(values) {
       return loginSchema.validate(values, { abortEarly: false })
@@ -75,9 +76,9 @@ export default function LoginForm() {
       >
         Entrar
       </Button>
-      <pre>
+      {/* <pre>
         {JSON.stringify(form.touched, null, 4)}
-      </pre>
+      </pre> */}
 
     </form>
   )
