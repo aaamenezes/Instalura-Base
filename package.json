@@ -14,6 +14,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@testing-library/user-event": "^13.1.1",
     "@types/jest": "^26.0.22",
     "commitizen": "^4.2.3",
     "eslint-plugin-jest": "^24.3.2",

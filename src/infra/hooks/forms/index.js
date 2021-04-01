@@ -1,5 +1,18 @@
 import { useEffect, useState } from 'react'
 
+function formatErrors(yupErrorsInner = []) {
+  return yupErrorsInner.reduce(
+    (errorObjectAcumulate, currentError) => {
+      const fieldName = currentError.path
+      const errorMessage = currentError.message
+      return {
+        ...errorObjectAcumulate,
+        [fieldName]: errorMessage
+      }
+    }, {}
+  )
+}
+
 export default function useForm({
   initialValues, onSubmit, validateSchema
 }) {
@@ -9,26 +22,20 @@ export default function useForm({
   const [ errors, setErrors ] = useState({})
   const [ touched, setTouchedFields ] = useState({})
 
+  async function validateValues(currentValues) {
+    try {
+      await validateSchema(currentValues)
+      setErrors({})
+      setIsFormDisabled(false)
+    } catch (error) {
+      const formatedErrors = formatErrors(error.inner)
+      setErrors(formatedErrors)
+      setIsFormDisabled(true)
+    }
+  }
+
   useEffect(() => {
-    validateSchema(values)
-      .then(() => {
-        setIsFormDisabled(false)
-        setErrors({})
-      })
-      .catch(error => {
-        const formatedErrors = error.inner.reduce(
-          (errorObjectAcumulate, currentError) => {
-            const fieldName = currentError.path
-            const errorMessage = currentError.message
-            return {
-              ...errorObjectAcumulate,
-              [fieldName]: errorMessage
-            }
-          }, {}
-        )
-        setErrors(formatedErrors)
-        setIsFormDisabled(true)
-      })
+    validateValues(values)
   }, [ values ])
 
   return {
@@ -46,6 +53,7 @@ export default function useForm({
       }))
     },
     isFormDisabled,
+    setIsFormDisabled,
     errors,
     touched,
     handleBlur(event) {
