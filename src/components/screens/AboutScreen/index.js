@@ -27,6 +27,7 @@ function AboutScreen({ messages }) {
               variant='title'
               tag='h2'
               color='vdfmvdfmvkm'
+              cmsKey='aboutPage.pageTitle'
             >
               {messages.aboutPage.pageTitle}
             </Text>
