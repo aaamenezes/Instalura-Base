@@ -2,10 +2,12 @@ import { GraphQLClient, gql as GraphQLTag } from 'graphql-request'
 
 export const gql = GraphQLTag
 
-export function CMSGraphQLClient() {
+export function CMSGraphQLClient({ preview } = { preview: false }) {
   // Ta vindo do arquivo .env.local
+  const DatoCMSURL = preview
+    ? 'https://graphql.datocms.com/preview'
+    : 'https://graphql.datocms.com/'
   const TOKEN = process.env.DATO_CMS_TOKEN
-  const DatoCMSURL = 'https://graphql.datocms.com/'
 
   const client = new GraphQLClient(DatoCMSURL, {
     headers: {

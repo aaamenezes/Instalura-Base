@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import { propToStyle } from '../../../theme/utils/propToStyle'
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
 import Link from '../../commons/Link'
+import { WebsitePageContext } from '../../wrappers/WebsitePage/context'
 
 export const TextStyleVariantsMap = {
   paragraph1: css`
@@ -54,7 +55,13 @@ const TextBase = styled.span`
   ${ propToStyle('textAlign') }
 `
 
-function Text({ tag, variant, children, href, ...props }) {
+function Text({ tag, variant, children, cmsKey, href, ...props }) {
+  const websitePageContext = React.useContext(WebsitePageContext)
+
+  const componentContent = cmsKey
+    ? websitePageContext.getCMSContent(cmsKey)
+    : children
+
   if (href) {
     return (
       <TextBase
@@ -63,7 +70,7 @@ function Text({ tag, variant, children, href, ...props }) {
         variant={variant}
         {...props}
       >
-        { children }
+        { componentContent }
       </TextBase>
     )
   }
@@ -74,7 +81,7 @@ function Text({ tag, variant, children, href, ...props }) {
       variant={variant}
       {...props}
     >
-      { children }
+      { componentContent }
     </TextBase>
   )
 }
@@ -83,6 +90,7 @@ Text.propTypes = {
   tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,
+  cmsKey: PropTypes.string,
   href: PropTypes.string
 }
 
@@ -90,6 +98,7 @@ Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
   children: null,
+  cmsKey: '',
   href: ''
 }
 
