@@ -1,3 +1,61 @@
+# Instalura
+
+## Descrição
+
+O Instalura é um portfolio clone do Instagram desenvolvido durante as aulas do Bootcamp Front-end JamStack da Alura.
+
+## Tecnologias utilizadas
+
+As principais tecnologias utilizadas foram React.JS, Styled Componentes e Next.JS, com muito foco em desempenho e SEO.
+
+Os dados cadastrados no portfólio foram importados via API do DatoCMS, que utiliza GraphQL.
+
+Também foram realizados testes no front-end utilizando Cypress, Jest e React Testing Library.
+
+O ESLint foi utilizado para padronizar o código escrito.
+
+## Projeto no ar
+
+Você pode acessar o projeto através dessa URL: [Instalura](https://instalura-base-aaamenezes.vercel.app/)
+
+## Como rodar esse projeto em seu computador
+
+1. Faça um clone do projeto em seu computador:
+
+```
+git clone https://github.com/aaamenezes/Instalura-Base.git
+```
+
+2. Instale as dependências:
+
+```
+npm i
+```
+
+Ou:
+
+```
+yarn
+```
+
+3. Inicie o projeto:
+
+```
+npm run dev
+```
+
+Ou: 
+
+```
+yarn dev
+```
+
+## Licença
+
+Não se aplica
+
+<!--
+
 # Example app with styled-components
 
 This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
@@ -76,3 +134,5 @@ export default () => (
 ```
 
 </details>
+
+-->
