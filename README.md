@@ -26,7 +26,13 @@ Você pode acessar o projeto através dessa URL: [Instalura](https://instalura-b
 git clone https://github.com/aaamenezes/Instalura-Base.git
 ```
 
-2. Instale as dependências:
+2. Acesse a pasta do projeto:
+
+```
+cd Instalura-Base
+```
+
+3. Instale as dependências:
 
 ```
 npm i
@@ -38,7 +44,7 @@ Ou:
 yarn
 ```
 
-3. Inicie o projeto:
+4. Inicie o projeto:
 
 ```
 npm run dev
